@@ -11,9 +11,9 @@ let pixelBoard = document.querySelector('#pixel-board')
 
 
 function colorselect (event) {
-  let colorSelect = document.querySelector('.select')
-  colorSelect.classList.remove('select')
-  event.target.classList.add('select')
+  let colorSelect = document.querySelector('.selected')
+  colorSelect.classList.remove('selected')
+  event.target.classList.add('selected')
 }
 palette.addEventListener('click', colorselect)
 
@@ -26,7 +26,7 @@ function selectPixel (event) {
 pixelBoard.addEventListener('click', selectPixel)
 
 function pixelColor (event) {
-  let colorSelect = document.querySelector('.select')
+  let colorSelect = document.querySelector('.selected')
   let pixelSelect = document.querySelector('.selectPixel')
   let colorSelectFundo =colorSelect.style.backgroundColor
   pixelSelect.style.backgroundColor = colorSelectFundo
