@@ -32,6 +32,7 @@ function pixelColor (event) {
   pixelSelect.style.backgroundColor = colorSelectFundo
 }
 let h1 = document.querySelector('h1')
+
 pixelBoard.addEventListener('click', pixelColor)
 
 
