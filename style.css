@@ -1,0 +1,50 @@
+#color-palette {
+  display: table;
+  border: #000000 solid 1px;
+  margin-left: 8%;
+}
+
+.palette {
+  display: table-row;
+}
+
+.color {
+  display: table-cell;
+  width: 40px;
+ height: 40px;
+ border: #000000 solid 1px;
+}
+.preto {
+  background-color:black;
+}
+
+.vermelho {
+  background-color: red;
+}
+
+.azul {
+  background-color: blue;
+}
+
+.amarelo {
+  background-color: yellow;
+}
+
+#pixel-board {
+  display: table;
+  border: #000000 solid 1px;
+  margin-top: 4%;
+  margin-left: 6%;
+
+}
+.tr {
+  display: table-row;
+  
+}
+.pixel {
+  display: table-cell;
+   width: 40px;
+  height: 40px;
+  border: #000000 solid 1px;
+  background-color: white;
+}
