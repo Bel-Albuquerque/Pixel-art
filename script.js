@@ -38,7 +38,7 @@ pixelBoard.addEventListener('click', pixelColor)
 function buttonLimparJogo (buttonName) {
   let buttonPai = document.querySelector('#button')
   let buttonFilho = document.createElement('button')
-  let buttonId = 'buttonSelect'
+  let buttonId = 'clear-board'
 
   buttonFilho.innerHTML = buttonName
   buttonFilho.id = buttonId
@@ -46,7 +46,7 @@ function buttonLimparJogo (buttonName) {
  }
 buttonLimparJogo("Limpar Jogo")
 
-let button = document.querySelector('#buttonSelect')
+let button = document.querySelector('#clear-board')
 
 function limparJogo (event) {
  let colorSelect = document.querySelector('.selected')
