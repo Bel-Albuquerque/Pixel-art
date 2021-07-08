@@ -44,7 +44,7 @@ function buttonLimparJogo (buttonName) {
   buttonFilho.id = buttonId
   buttonPai.appendChild(buttonFilho) 
  }
-buttonLimparJogo("Limpar Jogo")
+buttonLimparJogo("Limpar")
 
 let button = document.querySelector('#clear-board')
 
