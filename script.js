@@ -9,6 +9,10 @@ let colorYellow = yellow.style.backgroundColor = 'yellow'
 let palette = document.querySelector('.palette')
 let pixelBoard = document.querySelector('#pixel-board')
 let pixel = document.querySelectorAll('.pixel')
+const input = document.querySelector('input')
+let inputButton =document.querySelector('#inputButton')
+let num = 0
+let h1 = document.querySelector('h1')
 
 
 function colorselect (event) {
@@ -34,7 +38,6 @@ function pixelColor (event) {
 }
 pixelBoard.addEventListener('click', pixelColor)
 
-
 function buttonLimparJogo (buttonName) {
   let buttonPai = document.querySelector('#button')
   let buttonFilho = document.createElement('button')
@@ -59,3 +62,43 @@ function limparJogo (event) {
 }
 button.addEventListener('click', limparJogo)
 
+function buttonInput (vqv) {
+  let buttonInput =document.createElement('button')
+  let inputId = 'generate-board'
+
+  buttonInput.innerHTML = vqv
+  buttonInput.id = inputId
+  inputButton.appendChild(buttonInput)
+}
+buttonInput('VQV')
+
+let buttonImp = document.querySelector('#generate-board')
+
+function valueInput(event) {
+  num= event.target.value
+  
+}
+input.addEventListener('input', valueInput)
+
+
+function multiplicaLimpaInput() {
+  if (parseInt(num)>=5 && parseInt(num)<=50){
+    for (let index= 0; index <parseInt(num); index += 1) {
+     let divPai = document.querySelector('#pixel-board')
+      let divNovaLinha = document.createElement('div')
+      divNovaLinha.classList.add('linha')
+      divPai.appendChild(divNovaLinha)
+        for (let index = 0; index < parseInt(num); index += 1) {
+          let divQuadradinho = document.createElement('div')
+          divQuadradinho.classList.add('pixel')
+          divNovaLinha.appendChild(divQuadradinho)
+        }
+    }
+    let primeiroQuadradinho = document.querySelector('.pixel')
+    primeiroQuadradinho.classList.add('selectPixel')
+    input.value = ''
+    num=''
+  }
+}
+
+buttonImp.addEventListener('click', multiplicaLimpaInput)

@@ -30,14 +30,18 @@
   background-color: yellow;
 }
 
+#inputButton {
+  display: inline;
+}
+}
+
 #pixel-board {
   display: table;
   border: #000000 solid 1px;
-  margin-top: 4%;
-  margin-left: 6%;
-
+  
 }
-.tr {
+.linha {
+  border: #000000 solid 1px;
   display: table-row;
   
 }
