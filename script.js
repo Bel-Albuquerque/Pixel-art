@@ -75,6 +75,8 @@ input.addEventListener('input', valueInput)
 
 
 function multiplicaLimpaInput() {
+  let div = document.querySelector('#pixel-board')
+  div.innerHTML=''
   if (input.value == 0){
     alert("Board inválido!")
   } else if (parseInt(num)>=5 && parseInt(num)<=50){
@@ -89,12 +91,37 @@ function multiplicaLimpaInput() {
           divNovaLinha.appendChild(divQuadradinho)
         }
     }
+  } else if (parseInt(num)<5) {
+    for (let index= 0; index <5; index += 1) {
+      let divPai = document.querySelector('#pixel-board')
+      let divNovaLinha = document.createElement('div')
+      divNovaLinha.classList.add('linha')
+      divPai.appendChild(divNovaLinha)
+        for (let index = 0; index < 5; index += 1) {
+           let divQuadradinho = document.createElement('div')
+           divQuadradinho.classList.add('pixel')
+           divNovaLinha.appendChild(divQuadradinho)
+        }
+      }
+  } else if (parseInt(num)>50) {
+    for (let index= 0; index <50; index += 1) {
+      let divPai = document.querySelector('#pixel-board')
+      let divNovaLinha = document.createElement('div')
+      divNovaLinha.classList.add('linha')
+      divPai.appendChild(divNovaLinha)
+        for (let index = 0; index < 50; index += 1) {
+           let divQuadradinho = document.createElement('div')
+           divQuadradinho.classList.add('pixel')
+           divNovaLinha.appendChild(divQuadradinho)
+        }
+      }
+  }
     let primeiroQuadradinho = document.querySelector('.pixel')
     primeiroQuadradinho.classList.add('selectPixel')
     input.value = ''
     
     num=''
-  }
+  
 }
 
 
