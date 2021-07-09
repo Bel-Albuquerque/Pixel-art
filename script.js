@@ -8,7 +8,7 @@ let yellow = document.querySelector('.amarelo')
 let colorYellow = yellow.style.backgroundColor = 'yellow'
 let palette = document.querySelector('.palette')
 let pixelBoard = document.querySelector('#pixel-board')
-let pixel = document.querySelectorAll('.pixel')
+
 const input = document.querySelector('input')
 let inputButton =document.querySelector('#inputButton')
 let num = 0
@@ -51,17 +51,6 @@ buttonLimparJogo("Limpar")
 
 let button = document.querySelector('#clear-board')
 
-function limparJogo (event) {
- let colorSelect = document.querySelector('.selected')
- colorSelect.classList.remove('selected')
-  black.classList.add('selected')
-  for (let index = 0; index < pixel.length; index += 1) {
-    let quadradinho = pixel[index]
-    quadradinho.style.backgroundColor = 'white'
-  }
-}
-button.addEventListener('click', limparJogo)
-
 function buttonInput (vqv) {
   let buttonInput =document.createElement('button')
   let inputId = 'generate-board'
@@ -102,3 +91,17 @@ function multiplicaLimpaInput() {
 }
 
 buttonImp.addEventListener('click', multiplicaLimpaInput)
+
+let pixel = document.querySelectorAll('.pixel')
+
+function limparJogo (event) {
+  let colorSelect = document.querySelector('.selected')
+  colorSelect.classList.remove('selected')
+   black.classList.add('selected')
+   let pixel = document.querySelectorAll('.pixel')
+   for (let index = 0; index < pixel.length; index += 1) {
+     let quadradinho = pixel[index]
+     quadradinho.style.backgroundColor = 'white'
+   }
+ }
+ button.addEventListener('click', limparJogo)
