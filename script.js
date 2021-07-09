@@ -63,15 +63,21 @@ buttonInput('VQV')
 
 let buttonImp = document.querySelector('#generate-board')
 
+let num2
+
 function valueInput(event) {
   num= event.target.value
+  num2=parseInt(num)
   
 }
 input.addEventListener('input', valueInput)
 
 
+
 function multiplicaLimpaInput() {
-  if (parseInt(num)>=5 && parseInt(num)<=50){
+  if (input.value == 0){
+    alert("Board inválido!")
+  } else if (parseInt(num)>=5 && parseInt(num)<=50){
     for (let index= 0; index <parseInt(num); index += 1) {
      let divPai = document.querySelector('#pixel-board')
       let divNovaLinha = document.createElement('div')
@@ -86,9 +92,11 @@ function multiplicaLimpaInput() {
     let primeiroQuadradinho = document.querySelector('.pixel')
     primeiroQuadradinho.classList.add('selectPixel')
     input.value = ''
+    
     num=''
   }
 }
+
 
 buttonImp.addEventListener('click', multiplicaLimpaInput)
 
@@ -103,5 +111,13 @@ function limparJogo (event) {
      let quadradinho = pixel[index]
      quadradinho.style.backgroundColor = 'white'
    }
- }
+  let div = document.querySelector('#pixel-board')
+   div.innerHTML=''
+   input.value = ''
+}
  button.addEventListener('click', limparJogo)
+
+ let linhaT = document.querySelectorłø('.line')
+ let linhaTamanho = linhaT.style.width
+ let caixa = document.querySelector('#pixel-board')
+ caixa.style.width = linhaTamanho

@@ -36,13 +36,14 @@
 }
 
 #pixel-board {
-  display: table;
+   display: table;
   border: #000000 solid 1px;
   
 }
 .linha {
   border: #000000 solid 1px;
   display: table-row;
+  text-align: center;
   
 }
 .pixel {
