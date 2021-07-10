@@ -36,7 +36,7 @@
 
 
 .linha {
-  border: #000000 solid 1px;
+  border: rgb(146, 126, 126) solid 1px;
   display: table-row;
   text-align: center;
   
@@ -45,7 +45,7 @@
   display: table-cell;
    width: 40px;
   height: 40px;
-  border: #000000 solid 1px;
+  border: rgb(0, 0, 0) solid 1px;
   background-color: white;
 }
 

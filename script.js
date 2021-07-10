@@ -1,11 +1,8 @@
 let black = document.querySelector('.preto')
 let colorBlack = black.style.backgroundColor='black'
 let red = document.querySelector('.vermelho')
-let colorRed = red.style.backgroundColor = 'red'
 let blue = document.querySelector('.azul')
-let colorBlue = blue.style.backgroundColor = 'blue'
 let yellow = document.querySelector('.amarelo')
-let colorYellow = yellow.style.backgroundColor = 'yellow'
 let palette = document.querySelector('.palette')
 let pixelBoard = document.querySelector('#pixel-board')
 const input = document.querySelector('input')
@@ -13,6 +10,16 @@ let inputButton =document.querySelector('#inputButton')
 let num = 0
 let h1 = document.querySelector('h1')
 
+
+window.onload = function() {
+  let randomico = Math.floor(Math.random() * 1000)
+  let cor1 = 'rgb('+Math.floor(Math.random() * 1000) + ','+ Math.floor(Math.random() * 1000) + ',' +Math.floor(Math.random() * 1000) +')'
+  let color1 = red.style.backgroundColor = cor1
+  let cor2 = 'rgb('+Math.floor(Math.random() * 1000) + ','+ Math.floor(Math.random() * 1000) + ',' +Math.floor(Math.random() * 1000) +')'
+  let color2 = blue.style.backgroundColor = cor2
+  let cor3 = 'rgb('+Math.floor(Math.random() * 1000) + ','+ Math.floor(Math.random() * 1000) + ',' +Math.floor(Math.random() * 1000) +')'
+  let color3 = yellow.style.backgroundColor = cor3
+}
 
 function colorselect (event) {
   let colorSelect = document.querySelector('.selected')
