@@ -8,7 +8,6 @@ let yellow = document.querySelector('.amarelo')
 let colorYellow = yellow.style.backgroundColor = 'yellow'
 let palette = document.querySelector('.palette')
 let pixelBoard = document.querySelector('#pixel-board')
-
 const input = document.querySelector('input')
 let inputButton =document.querySelector('#inputButton')
 let num = 0
@@ -21,7 +20,6 @@ function colorselect (event) {
   event.target.classList.add('selected')
 }
 palette.addEventListener('click', colorselect)
-
 
 function selectPixel (event) {
   let pixelSelect= document.querySelector('.selectPixel')
@@ -46,10 +44,22 @@ function buttonLimparJogo (buttonName) {
   buttonFilho.innerHTML = buttonName
   buttonFilho.id = buttonId
   buttonPai.appendChild(buttonFilho) 
- }
+}
 buttonLimparJogo("Limpar")
-
 let button = document.querySelector('#clear-board')
+
+function apagaJogo(){
+   pixelBoard.innerHTML=''
+   value.input = ''
+}
+
+function selectedNoPreto () {
+  let colorSelect = document.querySelector('.selected')
+  colorSelect.classList.remove('selected')
+   black.classList.add('selected')
+}
+button.addEventListener('click', selectedNoPreto)
+button.addEventListener('click', apagaJogo)
 
 function buttonInput (vqv) {
   let buttonInput =document.createElement('button')
@@ -60,9 +70,7 @@ function buttonInput (vqv) {
   inputButton.appendChild(buttonInput)
 }
 buttonInput('VQV')
-
 let buttonImp = document.querySelector('#generate-board')
-
 let num2
 
 function valueInput(event) {
@@ -72,77 +80,71 @@ function valueInput(event) {
 }
 input.addEventListener('input', valueInput)
 
+function forNumeroEnte5e10() {
+  for (let index= 0; index <parseInt(num); index += 1) {
+    let divPai = document.querySelector('#pixel-board')
+    let divNovaLinha = document.createElement('div')
+    divNovaLinha.classList.add('linha')
+    divPai.appendChild(divNovaLinha)
+    for (let index = 0; index < parseInt(num); index += 1) {
+        let divQuadradinho = document.createElement('div')
+        divQuadradinho.classList.add('pixel')
+        divNovaLinha.appendChild(divQuadradinho)
+    }
+  }
+}
 
+function forNumeroMenor5 () {
+  for (let index= 0; index <5; index += 1) {
+    let divPai = document.querySelector('#pixel-board')
+    let divNovaLinha = document.createElement('div')
+    divNovaLinha.classList.add('linha')
+    divPai.appendChild(divNovaLinha)
+      for (let index = 0; index < 5; index += 1) {
+         let divQuadradinho = document.createElement('div')
+         divQuadradinho.classList.add('pixel')
+         divNovaLinha.appendChild(divQuadradinho)
+      }
+    }
+}
+
+function forNumeroMaior50() {
+  for (let index= 0; index <50; index += 1) {
+    let divPai = document.querySelector('#pixel-board')
+    let divNovaLinha = document.createElement('div')
+    divNovaLinha.classList.add('linha')
+    divPai.appendChild(divNovaLinha)
+    for (let index = 0; index < 50; index += 1) {
+      let divQuadradinho = document.createElement('div')
+      divQuadradinho.classList.add('pixel')
+      divNovaLinha.appendChild(divQuadradinho)
+    }
+  }
+}
 
 function multiplicaLimpaInput() {
-  let div = document.querySelector('#pixel-board')
-  div.innerHTML=''
+  pixelBoard.innerHTML=''
   if (input.value == 0){
     alert("Board inválido!")
   } else if (parseInt(num)>=5 && parseInt(num)<=50){
-    for (let index= 0; index <parseInt(num); index += 1) {
-     let divPai = document.querySelector('#pixel-board')
-      let divNovaLinha = document.createElement('div')
-      divNovaLinha.classList.add('linha')
-      divPai.appendChild(divNovaLinha)
-        for (let index = 0; index < parseInt(num); index += 1) {
-          let divQuadradinho = document.createElement('div')
-          divQuadradinho.classList.add('pixel')
-          divNovaLinha.appendChild(divQuadradinho)
-        }
-    }
+    forNumeroEnte5e10()
   } else if (parseInt(num)<5) {
-    for (let index= 0; index <5; index += 1) {
-      let divPai = document.querySelector('#pixel-board')
-      let divNovaLinha = document.createElement('div')
-      divNovaLinha.classList.add('linha')
-      divPai.appendChild(divNovaLinha)
-        for (let index = 0; index < 5; index += 1) {
-           let divQuadradinho = document.createElement('div')
-           divQuadradinho.classList.add('pixel')
-           divNovaLinha.appendChild(divQuadradinho)
-        }
-      }
+    forNumeroMenor5 ()
   } else if (parseInt(num)>50) {
-    for (let index= 0; index <50; index += 1) {
-      let divPai = document.querySelector('#pixel-board')
-      let divNovaLinha = document.createElement('div')
-      divNovaLinha.classList.add('linha')
-      divPai.appendChild(divNovaLinha)
-        for (let index = 0; index < 50; index += 1) {
-           let divQuadradinho = document.createElement('div')
-           divQuadradinho.classList.add('pixel')
-           divNovaLinha.appendChild(divQuadradinho)
-        }
-      }
+    forNumeroMaior50()
   }
-    let primeiroQuadradinho = document.querySelector('.pixel')
-    primeiroQuadradinho.classList.add('selectPixel')
-    input.value = ''
-    
-    num=''
+  let primeiroQuadradinho = document.querySelector('.pixel')
+  primeiroQuadradinho.classList.add('selectPixel')
+  input.value = ''
+  num=''
   
 }
-
-
 buttonImp.addEventListener('click', multiplicaLimpaInput)
 
 let pixel = document.querySelectorAll('.pixel')
 
-function limparJogo (event) {
-  let colorSelect = document.querySelector('.selected')
-  colorSelect.classList.remove('selected')
-   black.classList.add('selected')
-   let pixel = document.querySelectorAll('.pixel')
-   for (let index = 0; index < pixel.length; index += 1) {
-     let quadradinho = pixel[index]
-     quadradinho.style.backgroundColor = 'white'
-   }
-  let div = document.querySelector('#pixel-board')
-   div.innerHTML=''
-   input.value = ''
-}
- button.addEventListener('click', limparJogo)
+
+
 
  let linhaT = document.querySelectorłø('.line')
  let linhaTamanho = linhaT.style.width
