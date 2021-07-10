@@ -121,12 +121,16 @@ function forNumeroMaior50() {
     }
   }
 }
-
-function multiplicaLimpaInput() {
+function alerta(){
   pixelBoard.innerHTML=''
   if (input.value == 0){
     alert("Board inválido!")
-  } else if (parseInt(num)>=5 && parseInt(num)<=50){
+  }
+}
+
+function multiplicaLimpaInput() {
+  pixelBoard.innerHTML=''
+   if (parseInt(num)>=5 && parseInt(num)<=50){
     forNumeroEnte5e10()
   } else if (parseInt(num)<5) {
     forNumeroMenor5 ()
@@ -137,8 +141,9 @@ function multiplicaLimpaInput() {
   primeiroQuadradinho.classList.add('selectPixel')
   input.value = ''
   num=''
-  
 }
+
+buttonImp.addEventListener('click', alerta)
 buttonImp.addEventListener('click', multiplicaLimpaInput)
 
 let pixel = document.querySelectorAll('.pixel')
@@ -146,7 +151,3 @@ let pixel = document.querySelectorAll('.pixel')
 
 
 
- let linhaT = document.querySelectorłø('.line')
- let linhaTamanho = linhaT.style.width
- let caixa = document.querySelector('#pixel-board')
- caixa.style.width = linhaTamanho
