@@ -1,7 +1,14 @@
+div {
+
+}
 #color-palette {
   display: table;
   border: #000000 solid 1px;
   margin-left: 8%;
+}
+
+#pixel-board {
+  background-color: white;
 }
 
 .palette {
@@ -36,7 +43,7 @@
 
 
 .linha {
-  border: rgb(146, 126, 126) solid 1px;
+  border: rgb(0, 0, 0) solid 1px;
   display: table-row;
   text-align: center;
   
